@@ -1,5 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`#SeekService #relatedKeywords should have the response matching the snapshot 1`] = `
+[
+  "java",
+  "angular",
+  "react",
+  "full stack",
+  "python",
+  "nodejs",
+  "javascript",
+]
+`;
+
 exports[`#SeekService #search should have the response matching the snapshot 1`] = `
 [
   {

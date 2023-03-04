@@ -1,6 +1,10 @@
 import axios, { AxiosInstance } from 'axios';
 import { defaultConfiguration } from './config';
-import { ISeekServiceBaseConfig, ISeekServiceSearchResponse } from './types';
+import {
+  ISeekServiceBaseConfig,
+  ISeekServiceRelatedSearchResponse,
+  ISeekServiceSearchResponse,
+} from './types';
 
 /**
  * SeekService API
@@ -46,6 +50,30 @@ class SeekServiceApi {
     const url = `${baseUrl}${endpoints.search}`
       .replace('{pageNumber}', pageNumber.toString())
       .replace('{keyword}', keyword);
+
+    const { data } = await this.axiosInstance.get(url);
+
+    return data;
+  }
+
+  /**
+   * Get related keywords given a keyword
+   * @param keyword - The keyword to search for
+   * @returns The response from the API
+   */
+  public async relatedSearch(
+    keyword: string
+  ): Promise<ISeekServiceRelatedSearchResponse> {
+    const {
+      api: {
+        v4: { baseUrl, endpoints },
+      },
+    } = this.config;
+
+    const url = `${baseUrl}${endpoints.relatedSearch}`.replace(
+      '{keyword}',
+      keyword
+    );
 
     const { data } = await this.axiosInstance.get(url);
 

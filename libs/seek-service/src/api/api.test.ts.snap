@@ -15,6 +15,53 @@ exports[`#SeekServiceApi #constructor should get the default configuration 1`] =
 }
 `;
 
+exports[`#SeekServiceApi #relatedSearch should have the response matching the snapshot 1`] = `
+{
+  "relatedSearches": [
+    {
+      "keywords": "Amazon Web Services",
+      "totalJobs": 3704,
+      "type": "organisation",
+    },
+    {
+      "keywords": "java",
+      "totalJobs": 5434,
+      "type": "keyword",
+    },
+    {
+      "keywords": "angular",
+      "totalJobs": 2094,
+      "type": "keyword",
+    },
+    {
+      "keywords": "react",
+      "totalJobs": 2261,
+      "type": "keyword",
+    },
+    {
+      "keywords": "full stack",
+      "totalJobs": 684,
+      "type": "keyword",
+    },
+    {
+      "keywords": "python",
+      "totalJobs": 4984,
+      "type": "keyword",
+    },
+    {
+      "keywords": "nodejs",
+      "totalJobs": 651,
+      "type": "keyword",
+    },
+    {
+      "keywords": "javascript",
+      "totalJobs": 2753,
+      "type": "keyword",
+    },
+  ],
+}
+`;
+
 exports[`#SeekServiceApi #search should have the response matching the snapshot 1`] = `
 {
   "data": [

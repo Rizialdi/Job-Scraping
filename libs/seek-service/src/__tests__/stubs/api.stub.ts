@@ -129,4 +129,55 @@ const searchResult = (): ISeekServiceSearchResponse => {
   };
 };
 
-export { searchResult };
+/**
+ * Stub for the related search API response
+ * @returns The response from the API
+ */
+const relatedSearch = () => {
+  return {
+    relatedSearches: [
+      {
+        keywords: 'Amazon Web Services',
+        totalJobs: 3704,
+        type: 'organisation',
+      },
+      {
+        keywords: 'java',
+        totalJobs: 5434,
+        type: 'keyword',
+      },
+      {
+        keywords: 'angular',
+        totalJobs: 2094,
+        type: 'keyword',
+      },
+      {
+        keywords: 'react',
+        totalJobs: 2261,
+        type: 'keyword',
+      },
+      {
+        keywords: 'full stack',
+        totalJobs: 684,
+        type: 'keyword',
+      },
+      {
+        keywords: 'python',
+        totalJobs: 4984,
+        type: 'keyword',
+      },
+      {
+        keywords: 'nodejs',
+        totalJobs: 651,
+        type: 'keyword',
+      },
+      {
+        keywords: 'javascript',
+        totalJobs: 2753,
+        type: 'keyword',
+      },
+    ],
+  };
+};
+
+export { relatedSearch, searchResult };

@@ -25,6 +25,21 @@ class SeekService {
 
     return data;
   }
+
+  /**
+   * Get the related keyword of a given keyword
+   * @param keyword - The keyword to get the related keyword for
+   * @returns The list of related keywords
+   */
+  public async relatedKeywords(keyword: string): Promise<string[]> {
+    const { relatedSearches } = await this.api.relatedSearch(keyword);
+
+    const filteredSearch = relatedSearches.filter(
+      (relatedSearch) => relatedSearch.type === 'keyword'
+    );
+
+    return filteredSearch.map((relatedSearch) => relatedSearch.keywords);
+  }
 }
 
 export { SeekService };

@@ -140,8 +140,20 @@ interface ISeekServiceSearchResponse {
   };
 }
 
+/**
+ * Response from the related search endpoint
+ */
+interface ISeekServiceRelatedSearchResponse {
+  relatedSearches: {
+    keywords: string;
+    totalJobs: number;
+    type: string;
+  }[];
+}
+
 export {
   ISeekServiceBaseConfig,
+  ISeekServiceRelatedSearchResponse,
   ISeekServiceSearchResponse,
   ISeekServiceSearchResponseJobListing,
 };

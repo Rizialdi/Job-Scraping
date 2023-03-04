@@ -1,4 +1,4 @@
-import { searchResult } from '../__tests__/stubs/api.stub';
+import { relatedSearch, searchResult } from '../__tests__/stubs/api.stub';
 import { SeekServiceApi } from '../api/api';
 import { SeekService } from './seek-service';
 
@@ -7,6 +7,7 @@ describe('#SeekService', () => {
   let keyword: string;
   let pageNumber: number;
   let searchMock: jest.SpyInstance;
+  let relatedSearchMock: jest.SpyInstance;
 
   beforeEach(() => {
     sut = new SeekService();
@@ -15,10 +16,12 @@ describe('#SeekService', () => {
     keyword = 'fullstack';
 
     searchMock = jest.spyOn(SeekServiceApi.prototype, 'search');
+    relatedSearchMock = jest.spyOn(SeekServiceApi.prototype, 'relatedSearch');
   });
 
   afterEach(() => {
     searchMock.mockRestore();
+    relatedSearchMock.mockRestore();
   });
 
   describe('#constructor', () => {
@@ -38,6 +41,22 @@ describe('#SeekService', () => {
       searchMock.mockResolvedValue(searchResult());
 
       const response = await sut.search(keyword, pageNumber);
+
+      expect(response).toMatchSnapshot();
+    });
+  });
+
+  describe('#relatedKeywords', () => {
+    it('should call the correct method', async () => {
+      await sut.relatedKeywords(keyword);
+
+      expect(relatedSearchMock).toHaveBeenCalledWith(keyword);
+    });
+
+    it('should have the response matching the snapshot', async () => {
+      relatedSearchMock.mockResolvedValue(relatedSearch());
+
+      const response = await sut.relatedKeywords(keyword);
 
       expect(response).toMatchSnapshot();
     });
