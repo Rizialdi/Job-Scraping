@@ -1,7 +1,7 @@
 {
   "root": true,
   "ignorePatterns": ["**/*"],
-  "plugins": ["@nrwl/nx"],
+  "plugins": ["@nrwl/nx", "simple-import-sort", "eslint-plugin-tsdoc"],
   "overrides": [
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
@@ -18,7 +18,29 @@
               }
             ]
           }
-        ]
+        ],
+        "simple-import-sort/imports": [
+          "error",
+          {
+            "groups": [
+              [
+                // Side effect imports.
+                "^\\u0000",
+                // Packages.
+                // Things that start with a letter (or digit or underscore), or `@` followed by a letter.
+                "^@?\\w",
+                // Absolute imports and other imports.
+                // Anything not matched in another group.
+                "^",
+                // Relative imports.
+                // Anything that starts with a dot.
+                "^\\."
+              ]
+            ]
+          }
+        ],
+        "simple-import-sort/exports": "error",
+        "tsdoc/syntax": "warn"
       }
     },
     {

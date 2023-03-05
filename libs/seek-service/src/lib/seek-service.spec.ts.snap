@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`#SeekService #relatedKeywords should have the response matching the snapshot 1`] = `
+[
+  "java",
+  "angular",
+  "react",
+  "full stack",
+  "python",
+  "nodejs",
+  "javascript",
+]
+`;
+
+exports[`#SeekService #search should have the response matching the snapshot 1`] = `
+[
+  {
+    "Extracted_at": "Mon, 06 Mar 2023 08:00:00 GMT",
+    "Job_id": "61986871",
+    "Job_listing_date": "Tue, 28 Feb 2023",
+    "Location": "North Sydney, Sydney NSW",
+    "company_name": "Bridge Associates APAC",
+    "contract_type": "Full Time",
+    "job_classification": "Information & Communication Technology",
+    "job_title": "Digital Lead - Hands on Fullstack Lead  - Agile - DevOps -",
+    "logo": "",
+    "salary_range": "$140,000 - $169,999",
+    "salary_type": "",
+    "seek_job_ad_type": "SPONSORED",
+    "seek_job_profile_url": "https://www.seek.com.au/job/61986871",
+    "seek_job_teaser": "Exciting new digital lead developer role working with the latest Microsoft techs!!",
+    "seek_role_id": "digital-lead",
+    "seek_specifics": "Exciting New Role - Career Development",
+  },
+]
+`;
+
+exports[`#SeekService #searchUsingBrowser should have the response matching the snapshot 1`] = `
+[
+  {
+    "Extracted_at": "Mon, 06 Mar 2023 08:00:00 GMT",
+    "Job_id": "59820105",
+    "Job_listing_date": "Sat, 04 Feb 2023",
+    "Location": "Sydney NSW",
+    "company_name": "Evolution Recruitment Solutions Pty Ltd",
+    "contract_type": "Full Time",
+    "job_classification": "Information & Communication Technology",
+    "job_title": "Senior  Fullstack .NET Software Engineer",
+    "logo": "",
+    "salary_range": "$140,000 - $169,999",
+    "salary_type": "",
+    "seek_job_ad_type": "ORGANIC",
+    "seek_job_profile_url": "https://www.seek.com.au/job/59820105?type=standout#sol=09b8a51e2d80eebd75c222500c3ad8ff7159f322",
+    "seek_job_teaser": "Your team will be responsible building the core product and be the Engine behind the success of Unicorn Tech Disruptor.",
+    "seek_role_id": "",
+    "seek_specifics": "Your team will be responsible building the core product and be the Engine behind the success of Unicorn Tech Disruptor.",
+  },
+]
+`;

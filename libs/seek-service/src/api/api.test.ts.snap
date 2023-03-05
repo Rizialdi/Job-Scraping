@@ -1,0 +1,189 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`#SeekServiceApi #constructor should get the default configuration 1`] = `
+{
+  "api": {
+    "v4": {
+      "baseUrl": "/api/chalice-search/v4",
+      "endpoints": {
+        "relatedSearch": "/related-search?zone=anz-1&siteKey=au&keywords={keyword}",
+        "search": "/search?page={pageNumber}&keywords={keyword}",
+      },
+    },
+  },
+  "baseUrl": "https://www.seek.com.au",
+}
+`;
+
+exports[`#SeekServiceApi #relatedSearch should have the response matching the snapshot 1`] = `
+{
+  "relatedSearches": [
+    {
+      "keywords": "Amazon Web Services",
+      "totalJobs": 3704,
+      "type": "organisation",
+    },
+    {
+      "keywords": "java",
+      "totalJobs": 5434,
+      "type": "keyword",
+    },
+    {
+      "keywords": "angular",
+      "totalJobs": 2094,
+      "type": "keyword",
+    },
+    {
+      "keywords": "react",
+      "totalJobs": 2261,
+      "type": "keyword",
+    },
+    {
+      "keywords": "full stack",
+      "totalJobs": 684,
+      "type": "keyword",
+    },
+    {
+      "keywords": "python",
+      "totalJobs": 4984,
+      "type": "keyword",
+    },
+    {
+      "keywords": "nodejs",
+      "totalJobs": 651,
+      "type": "keyword",
+    },
+    {
+      "keywords": "javascript",
+      "totalJobs": 2753,
+      "type": "keyword",
+    },
+  ],
+}
+`;
+
+exports[`#SeekServiceApi #search should have the response matching the snapshot 1`] = `
+{
+  "data": [
+    {
+      "advertiser": {
+        "description": "Bridge Associates APAC Pty Ltd",
+        "id": "28815495",
+      },
+      "area": "North Shore & Northern Beaches",
+      "areaId": 5028,
+      "areaWhereValue": "North Shore & Northern Beaches Sydney NSW",
+      "automaticInclusion": false,
+      "bulletPoints": [
+        "Exciting New Role -",
+        "Career Development",
+      ],
+      "classification": {
+        "description": "Information & Communication Technology",
+        "id": "6281",
+      },
+      "companyName": "Bridge Associates APAC",
+      "companyProfileStructuredDataId": 221565,
+      "displayStyle": {
+        "search": "A",
+      },
+      "displayType": "promoted",
+      "id": 61986871,
+      "isPremium": true,
+      "isPrivateAdvertiser": false,
+      "isStandOut": true,
+      "jobLocation": {
+        "countryCode": "AU",
+        "label": "North Sydney, Sydney NSW",
+        "seoHierarchy": [
+          {
+            "contextualName": "North Sydney NSW 2060",
+          },
+          {
+            "contextualName": "All Sydney NSW",
+          },
+        ],
+      },
+      "listingDate": "2023-02-28T12:03:01Z",
+      "listingDateDisplay": "4d ago",
+      "location": "Sydney",
+      "locationId": 1000,
+      "locationWhereValue": "All Sydney NSW",
+      "logo": {
+        "description": null,
+        "id": "",
+      },
+      "roleId": "digital-lead",
+      "salary": "$140,000 - $169,999",
+      "solMetadata": {
+        "jobAdType": "SPONSORED",
+        "jobId": "61986871",
+        "searchRequestToken": "840c4c61-9bf7-4a82-b8f3-cddea9a8f793",
+        "section": "MAIN",
+        "sectionRank": 1,
+        "tags": {
+          "mordor__flights": "mordor_123",
+          "mordor__s": "0",
+        },
+        "token": "0~840c4c61-9bf7-4a82-b8f3-cddea9a8f793",
+      },
+      "subClassification": {
+        "description": "Developers/Programmers",
+        "id": "6287",
+      },
+      "suburb": "North Sydney",
+      "suburbId": 24000,
+      "suburbWhereValue": "North Sydney NSW 2060",
+      "teaser": "Exciting new digital lead developer role working with the latest Microsoft techs!!",
+      "title": "Digital Lead - Hands on Fullstack Lead  - Agile - DevOps -",
+      "tracking": "ewogICJ0b2tlbiI6ICI1OTYyZjM4NS1kNDM0LTk2NGUtOTM1ZC00ZWMwZTMwZTBiNmZfMSIKfQ==",
+      "workType": "Full Time",
+    },
+  ],
+  "info": {
+    "experiment": "mordor_123",
+    "source": "JobSearch-sm",
+    "timeTaken": 20,
+  },
+  "joraCrossLink": {
+    "canCrossLink": false,
+  },
+  "paginationParameters": {
+    "hadPremiumListings": true,
+    "seekSelectAllPages": true,
+  },
+  "searchParams": {
+    "keywords": "fullstack",
+    "page": "1",
+    "solid": "5fb082eb-8177-455f-b2a2-506c1136d09f",
+  },
+  "solMetadata": {
+    "keywords": "fullstack",
+    "pageNumber": 1,
+    "pageSize": 22,
+    "requestToken": "840c4c61-9bf7-4a82-b8f3-cddea9a8f793",
+    "sortMode": "RELEVANCE",
+    "tags": {
+      "chalice-search-api:solId": "5fb082eb-8177-455f-b2a2-506c1136d09f",
+      "mordor__flights": "mordor_123",
+    },
+    "token": "0~840c4c61-9bf7-4a82-b8f3-cddea9a8f793",
+    "totalJobCount": 670,
+  },
+  "sortMode": [
+    {
+      "isActive": true,
+      "name": "Relevance",
+      "value": "KeywordRelevance",
+    },
+    {
+      "isActive": false,
+      "name": "Date",
+      "value": "ListedDate",
+    },
+  ],
+  "title": "Fullstack Jobs",
+  "totalCount": 670,
+  "userQueryId": "API3473179588813666096",
+}
+`;

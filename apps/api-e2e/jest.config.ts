@@ -1,7 +1,7 @@
 /* eslint-disable */
 export default {
   displayName: 'api-e2e',
-  preset: '../../jest.preset.js',
+  preset: '../../jest.preset.ts',
   globals: {
     'ts-jest': {
       tsconfig: '<rootDir>/tsconfig.spec.json',
