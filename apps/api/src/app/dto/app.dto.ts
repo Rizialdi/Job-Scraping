@@ -1,3 +1,4 @@
+import { ApiProperty } from '@nestjs/swagger';
 import { IsDefined, IsEnum, IsString } from 'class-validator';
 
 /**
@@ -20,10 +21,15 @@ enum EMode {
 class QueryParamsSearchDto {
   @IsDefined()
   @IsEnum(EMode)
+  @ApiProperty({ description: 'Mode to search with.', enum: EMode })
   mode: EMode;
 
   @IsDefined()
   @IsString()
+  @ApiProperty({
+    description: 'Keyword to search.',
+    type: String,
+  })
   keyword: string;
 }
 

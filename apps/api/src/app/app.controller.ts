@@ -1,4 +1,7 @@
-import { SeekService } from '@job-scraping/seek-service';
+import {
+  ISeekServiceSearchResponseJobListing,
+  SeekService,
+} from '@job-scraping/seek-service';
 import {
   Controller,
   Get,
@@ -7,6 +10,11 @@ import {
   UsePipes,
   ValidationPipe,
 } from '@nestjs/common';
+import {
+  ApiBadRequestResponse,
+  ApiInternalServerErrorResponse,
+  ApiOkResponse,
+} from '@nestjs/swagger';
 import { AppService } from './app.service';
 import { QueryParamsSearchDto } from './dto/app.dto';
 
@@ -22,6 +30,8 @@ export class AppController {
    * @returns version of the API
    */
   @Get()
+  @ApiOkResponse({ description: 'API version available' })
+  @ApiInternalServerErrorResponse({ description: 'Internal server error' })
   getVersion() {
     return this.appService.getVersion();
   }
@@ -32,8 +42,13 @@ export class AppController {
    */
   @Get('/search')
   @UsePipes(new ValidationPipe())
-  async search(@Query() { mode, keyword }: QueryParamsSearchDto) {
-    Logger.log('job posting search', { mode, keyword });
+  @ApiOkResponse({ description: 'Search results are available' })
+  @ApiBadRequestResponse({ description: 'Invalid search parameters' })
+  @ApiInternalServerErrorResponse({ description: 'Internal server error' })
+  async search(
+    @Query() { mode, keyword }: QueryParamsSearchDto
+  ): Promise<ISeekServiceSearchResponseJobListing[]> {
+    Logger.log('Job posting search', { mode, keyword });
 
     try {
       const response =
