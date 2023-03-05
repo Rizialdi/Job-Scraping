@@ -1,7 +1,7 @@
 /* eslint-disable */
 export default {
   displayName: 'seek-service',
-  preset: '../../jest.preset.js',
+  preset: '../../jest.preset.ts',
   testEnvironment: 'node',
   transform: {
     '^.+\\.[tj]sx?$': ['ts-jest', { tsconfig: '<rootDir>/tsconfig.spec.json' }],

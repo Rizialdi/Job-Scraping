@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`#SeekServiceAutomation #search should have the response matching the snapshot 1`] = `
+[
+  {
+    "companyName": "Evolution Recruitment Solutions Pty Ltd",
+    "jobAdType": "ORGANIC",
+    "jobClassification": "Information & Communication Technology",
+    "jobContractType": "This is a Full Time job",
+    "jobId": "59820105",
+    "jobListingDate": "4 Feb 2023",
+    "jobSalaryRange": "$140,000 - $169,999",
+    "jobSalaryType": "",
+    "jobSpecifics": "Your team will be responsible building the core product and be the Engine behind the success of Unicorn Tech Disruptor.",
+    "jobTeaser": "Your team will be responsible building the core product and be the Engine behind the success of Unicorn Tech Disruptor.",
+    "jobTitle": "Senior  Fullstack .NET Software Engineer",
+    "jobUrl": "https://www.seek.com.au/job/59820105?type=standout#sol=09b8a51e2d80eebd75c222500c3ad8ff7159f322",
+    "location": "Sydney NSW",
+    "logo": "",
+    "roleId": "",
+  },
+]
+`;

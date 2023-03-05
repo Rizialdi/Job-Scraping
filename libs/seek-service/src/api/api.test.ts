@@ -1,4 +1,4 @@
-import * as nock from 'nock';
+import nock from 'nock';
 import { relatedSearch, searchResult } from '../__tests__/stubs/api.stub';
 import { SeekServiceApi } from './api';
 
