@@ -3,6 +3,7 @@ image: node:18.4.0-alpine
 stages:
   - test
   - build
+  - deploy
 
 .distributed:
   interruptible: true
@@ -58,3 +59,15 @@ build:
   script:
     - pnpm nx affected --base=$NX_BASE --head=$NX_HEAD --target=build --parallel=3
     - pnpm nx-cloud stop-all-agents
+
+deploy-railway:
+  stage: deploy
+  image: ubuntu
+  only:
+    - pushes
+    - main
+  script:
+    - echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
+    - apt-get update && apt-get install -y apt-utils curl
+    - curl -fsSL https://railway.app/install.sh | bash
+    - RAILWAY_TOKEN=f4b56fad-7deb-4910-98ca-8ac5725dadab railway up -d
