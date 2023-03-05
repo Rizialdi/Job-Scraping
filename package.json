@@ -2,7 +2,10 @@
   "name": "job-scraping",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "api:build:production": "docker build -t api .",
+    "api:deploy:production": "docker run -p 3000:3000 api"
+  },
   "private": true,
   "dependencies": {
     "@nestjs/common": "^9.0.0",

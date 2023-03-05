@@ -7,7 +7,9 @@ import { IDataSearchSolMeta, IJobListing } from './types';
  * @returns The list of job listings
  */
 const search = async (keyword: string): Promise<IJobListing[]> => {
-  const browser = await puppeteer.launch();
+  const browser = await puppeteer.launch({
+    args: ['--no-sandbox', '--disable-dev-shm-usage', '--single-process'],
+  });
   const page = await browser.newPage();
 
   const url = 'https://www.seek.com.au';
