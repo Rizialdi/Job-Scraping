@@ -15,7 +15,7 @@ curl --request GET \
 
 - The valid values for `mode` are `endpoint` and `browser`. The first one uses a Seek API endpoint and whereas the second launches a headless browser for extracting data using [Puppeteer](https://pptr.dev/).
 
-- The `keyword` parameter is optional.
+- The `keyword` parameter to look for job offers.
 
 ## Documentation
 
