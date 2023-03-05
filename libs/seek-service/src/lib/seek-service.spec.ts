@@ -72,6 +72,8 @@ describe('#SeekService', () => {
 
   describe('#searchUsingBrowser', () => {
     it('should call the correct method', async () => {
+      searchUsingBrowserMock.mockResolvedValue([]);
+
       await sut.searchUsingBrowser(keyword);
 
       expect(searchUsingBrowserMock).toHaveBeenCalledWith(keyword);
