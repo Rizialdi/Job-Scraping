@@ -1,0 +1,17 @@
+.git
+.github
+.vscode
+coverage
+dist
+*.md
+.prettierrc
+
+# Source files
+src
+test
+
+# Nx
+tools
+tmp
+screenshots
+node_modules

@@ -2,7 +2,13 @@
 
 ## Development server
 
-Run `nx serve api` for a dev server. Navigate to http://localhost:3333/api. The app will automatically reload if you change any of the source files.
+### Using `nx`
+
+Run `nx serve api` for a dev server. Navigate to http://localhost:3000/api. The app will automatically reload if you change any of the source files.
+
+### Using `docker`
+
+Run `docker build -t api .` to build the image. Then, run `docker run -p 3000:3000 api` to run the container. Navigate to http://localhost:3000/api.
 
 ## Search for jobs
 
@@ -10,7 +16,7 @@ To be able to search for job offers, use the following cURL command:
 
 ```bash
 curl --request GET \
-  --url 'http://localhost:3333/api/search?mode=endpoint&keyword=cto'
+  --url 'http://localhost:3000/api/search?mode=endpoint&keyword=cto'
 ```
 
 - The valid values for `mode` are `endpoint` and `browser`. The first one uses a Seek API endpoint and whereas the second launches a headless browser for extracting data using [Puppeteer](https://pptr.dev/).
@@ -19,7 +25,7 @@ curl --request GET \
 
 ## Documentation
 
-To have access to the documentation, run `nx serve api` and navigate to http://localhost:3333/api/docs.
+To have access to the documentation, run `nx serve api` and navigate to http://localhost:3000/api/docs.
 
 ## Understand this workspace
 
