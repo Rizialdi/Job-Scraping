@@ -1,7 +1,7 @@
 /**
  * Base configuration for the SeekService
  */
-interface ISeekServiceBaseConfig {
+interface ISeekServiceApiBaseConfig {
   baseUrl: string;
   api: {
     v4: {
@@ -17,7 +17,7 @@ interface ISeekServiceBaseConfig {
 /**
  * Job listing from the search endpoint
  */
-interface ISeekServiceSearchResponseJobListing {
+interface ISeekServiceApiSearchResponseJobListing {
   advertiser: {
     id: string;
     description: string;
@@ -98,8 +98,8 @@ interface ISeekServiceSearchResponseJobListing {
 /**
  * Response from the search endpoint
  */
-interface ISeekServiceSearchResponse {
-  data: ISeekServiceSearchResponseJobListing[];
+interface ISeekServiceApiSearchResponse {
+  data: ISeekServiceApiSearchResponseJobListing[];
   title: string;
   totalCount: number;
   paginationParameters: {
@@ -143,7 +143,7 @@ interface ISeekServiceSearchResponse {
 /**
  * Response from the related search endpoint
  */
-interface ISeekServiceRelatedSearchResponse {
+interface ISeekServiceApiRelatedSearchResponse {
   relatedSearches: {
     keywords: string;
     totalJobs: number;
@@ -152,8 +152,8 @@ interface ISeekServiceRelatedSearchResponse {
 }
 
 export {
-  ISeekServiceBaseConfig,
-  ISeekServiceRelatedSearchResponse,
-  ISeekServiceSearchResponse,
-  ISeekServiceSearchResponseJobListing,
+  ISeekServiceApiBaseConfig,
+  ISeekServiceApiRelatedSearchResponse,
+  ISeekServiceApiSearchResponse,
+  ISeekServiceApiSearchResponseJobListing,
 };

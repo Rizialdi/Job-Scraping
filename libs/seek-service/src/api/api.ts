@@ -1,9 +1,9 @@
 import axios, { AxiosInstance } from 'axios';
 import { defaultConfiguration } from './config';
 import {
-  ISeekServiceBaseConfig,
-  ISeekServiceRelatedSearchResponse,
-  ISeekServiceSearchResponse,
+  ISeekServiceApiBaseConfig,
+  ISeekServiceApiRelatedSearchResponse,
+  ISeekServiceApiSearchResponse,
 } from './types';
 
 /**
@@ -11,7 +11,7 @@ import {
  * This class is responsible for making requests to the Seek API
  */
 class SeekServiceApi {
-  public config: ISeekServiceBaseConfig;
+  public config: ISeekServiceApiBaseConfig;
   private axiosInstance: AxiosInstance;
 
   constructor() {
@@ -27,7 +27,7 @@ class SeekServiceApi {
    * Get the current configuration for the SeekService
    * @returns The current configuration for the SeekService
    */
-  public getConfiguration(): ISeekServiceBaseConfig {
+  public getConfiguration(): ISeekServiceApiBaseConfig {
     return this.config;
   }
 
@@ -40,7 +40,7 @@ class SeekServiceApi {
   public async search(
     keyword: string,
     pageNumber: number
-  ): Promise<ISeekServiceSearchResponse> {
+  ): Promise<ISeekServiceApiSearchResponse> {
     const {
       api: {
         v4: { baseUrl, endpoints },
@@ -63,7 +63,7 @@ class SeekServiceApi {
    */
   public async relatedSearch(
     keyword: string
-  ): Promise<ISeekServiceRelatedSearchResponse> {
+  ): Promise<ISeekServiceApiRelatedSearchResponse> {
     const {
       api: {
         v4: { baseUrl, endpoints },

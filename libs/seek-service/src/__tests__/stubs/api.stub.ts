@@ -1,10 +1,10 @@
-import { ISeekServiceSearchResponse } from '../../api/types';
+import { ISeekServiceApiSearchResponse } from '../../api/types';
 
 /**
  * Stub for the search API response
  * @returns The response from the API
  */
-const searchResult = (): ISeekServiceSearchResponse => {
+const searchResult = (): ISeekServiceApiSearchResponse => {
   return {
     data: [
       {

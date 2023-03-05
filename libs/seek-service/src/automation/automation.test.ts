@@ -3,37 +3,33 @@ import { SeekServiceAutomation } from './automation';
 
 describe('#SeekServiceAutomation', () => {
   let keyword: string;
+  let sut: SeekServiceAutomation;
 
   beforeEach(() => {
     keyword = 'fullstack';
+    sut = new SeekServiceAutomation();
   });
 
   describe('#constructor', () => {
     it('should be defined', () => {
-      expect(SeekServiceAutomation).toBeDefined();
+      expect(sut).toBeDefined();
     });
   });
 
   describe('#search', () => {
     it('should call the correct method', async () => {
-      const mockedSearch = jest
-        .spyOn(SeekServiceAutomation, 'search')
-        .mockResolvedValue([]);
+      const mockedSearch = jest.spyOn(sut, 'search').mockResolvedValue([]);
 
-      await SeekServiceAutomation.search(keyword);
+      await sut.search(keyword);
 
       expect(mockedSearch).toHaveBeenCalledTimes(1);
       expect(mockedSearch).toHaveBeenCalledWith(keyword);
     });
 
     it('should have the response matching the snapshot', async () => {
-      jest
-        .spyOn(SeekServiceAutomation, 'search')
-        .mockResolvedValue(searchResult());
+      jest.spyOn(sut, 'search').mockResolvedValue(searchResult());
 
-      const response = await SeekServiceAutomation.search(keyword);
-
-      console.log(response);
+      const response = await sut.search(keyword);
 
       expect(response).toMatchSnapshot();
     });

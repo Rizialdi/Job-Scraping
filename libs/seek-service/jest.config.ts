@@ -9,4 +9,5 @@ export default {
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
   coverageDirectory: '../../coverage/libs/seek-service',
   snapshotResolver: '<rootDir>/src/__tests__/snapshotResolver.ts',
+  setupFilesAfterEnv: ['<rootDir>/src/__tests__/setupMockDate.ts'],
 };

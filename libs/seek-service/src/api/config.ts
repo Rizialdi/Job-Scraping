@@ -1,9 +1,9 @@
-import { ISeekServiceBaseConfig } from './types';
+import { ISeekServiceApiBaseConfig } from './types';
 
 /**
  * Default configuration for the SeekService
  */
-const defaultConfiguration: ISeekServiceBaseConfig = {
+const defaultConfiguration: ISeekServiceApiBaseConfig = {
   baseUrl: 'https://www.seek.com.au',
   api: {
     v4: {

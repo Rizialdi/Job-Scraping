@@ -11,7 +11,7 @@ class SeekServiceAutomation {
    * @param keyword - The keyword to search for
    * @returns The response from the API
    */
-  static async search(keyword: string): Promise<IJobListing[]> {
+  public async search(keyword: string): Promise<IJobListing[]> {
     return search(keyword);
   }
 }
